@@ -13,6 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
+import app.evilcat.compose.navigation.toroutedemo.navigation.info.InfoNavHost
+import app.evilcat.compose.navigation.toroutedemo.ui.component.CenterColumn
 
 @Composable
 fun RootNavHost(
@@ -27,11 +29,7 @@ fun RootNavHost(
         navigation<RootRoutes.Root>(startDestination = RootRoutes.Home) {
             composable<RootRoutes.Home> {
                 // Home screen
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
+                CenterColumn {
                     Text("Home Screen")
                     Button(onClick = { rootNavController.navigate(RootRoutes.Info) }) {
                         Text("Go to Info")
@@ -39,23 +37,8 @@ fun RootNavHost(
                 }
             }
             composable<RootRoutes.Info> {
-                // Info screen
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Text("Info Screen")
-                    Button(onClick = { /*TODO*/ }) {
-                        Text("Go to Info - Legal")
-                    }
-                    Button(onClick = { /*TODO*/ }) {
-                        Text("Go to Info - Support")
-                    }
-                    Button(onClick = { /*TODO*/ }) {
-                        Text("Go to Info - Live Chat")
-                    }
-                }
+                // Info NavHost
+                InfoNavHost()
             }
         }
     }

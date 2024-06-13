@@ -1,4 +1,4 @@
-package app.evilcat.compose.navigation.toroutedemo.ui
+package app.evilcat.compose.navigation.toroutedemo.ui.component
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home

@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import app.evilcat.compose.navigation.toroutedemo.navigation.RootNavHost
+import app.evilcat.compose.navigation.toroutedemo.ui.component.BottomNavigationBar
 import app.evilcat.compose.navigation.toroutedemo.ui.theme.ToRouteDemoTheme
 
 @Composable
