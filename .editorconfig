@@ -1,0 +1,35 @@
+root = true
+
+[*]
+# Settings -> Editor -> General -> Remove trailing spaces on: Modified lines
+trim_trailing_whitespace = true
+# Settings -> Editor -> General -> Ensure every file ends with a line break
+insert_final_newline = true
+
+# [app/build/**]
+# generated_code = true
+
+# reference: https://pinterest.github.io/ktlint/rules/configuration-ktlint/
+# noinspection EditorConfigKeyCorrectness
+[**/src/**/*.{kt,kts}]
+
+# specific ktlint rules
+# used noinspection suppression to avoid warnings in Android Studio
+ktlint_code_style = intellij_idea
+ktlint_function_signature_body_expression_wrapping = default
+ktlint_function_signature_rule_force_multiline_when_parameter_count_greater_or_equal_than = unset
+ktlint_function_naming_ignore_when_annotated_with = Composable
+
+# default allowed wildcard imports
+# default IDEA style
+ij_kotlin_imports_layout = *, java.**, javax.**, kotlin.**, ^
+# allow specific imports
+ij_kotlin_packages_to_use_import_on_demand = kotlinx.android.synthetic.**
+
+# Kotlin Android Style Guide
+max_line_length = 100
+indent_size = 4
+indent_style = space
+
+
+
