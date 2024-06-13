@@ -39,7 +39,7 @@ fun BottomNavigationBar(currentRoute: String?, rootNavController: NavHostControl
                 )
             } == true,
             onClick = {
-                rootNavController.navigate(RootRoutes.Info) {
+                rootNavController.navigate(RootRoutes.Info()) {
                     popUpTo(RootRoutes.Root) {
                         saveState = true
                     }

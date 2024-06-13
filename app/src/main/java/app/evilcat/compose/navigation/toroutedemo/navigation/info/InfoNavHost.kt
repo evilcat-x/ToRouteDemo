@@ -3,6 +3,7 @@ package app.evilcat.compose.navigation.toroutedemo.navigation.info
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -13,8 +14,13 @@ import app.evilcat.compose.navigation.toroutedemo.ui.component.CenterColumn
 @Composable
 fun InfoNavHost(
     modifier: Modifier = Modifier,
+    targetDestination: InfoRoutes? = null,
     infoNavController: NavHostController = rememberNavController(),
 ) {
+    LaunchedEffect(targetDestination) {
+        targetDestination?.let { infoNavController.navigate(it) }
+    }
+
     NavHost(
         navController = infoNavController,
         startDestination = InfoRoutes.Main,

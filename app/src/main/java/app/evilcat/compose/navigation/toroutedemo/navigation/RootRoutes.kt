@@ -1,5 +1,6 @@
 package app.evilcat.compose.navigation.toroutedemo.navigation
 
+import app.evilcat.compose.navigation.toroutedemo.navigation.info.InfoRoutes
 import kotlinx.serialization.Serializable
 
 sealed class RootRoutes {
@@ -10,5 +11,5 @@ sealed class RootRoutes {
     data object Home : RootRoutes()
 
     @Serializable
-    data object Info : RootRoutes()
+    data class Info(val targetDestination: InfoRoutes? = null) : RootRoutes()
 }
